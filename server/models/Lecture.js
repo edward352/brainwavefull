@@ -9,7 +9,6 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
   video: {
     type: String,
     required: true,
@@ -24,4 +23,5 @@ const schema = new mongoose.Schema({
     default: Date.now,
   },
 });
+
 export const Lecture = mongoose.model("Lecture", schema);

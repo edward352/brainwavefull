@@ -1,9 +1,20 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-import { IoMdEye,IoMdEyeOff} from "react-icons/io";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { TbArrowUpRight } from "react-icons/tb";
+import { UserData } from "../../context/UserContext.jsx";
 const Register = () => {
+  const navigate = useNavigate();
+  const { btnLoading, registerUser } = UserData();
   const [pass, setPass] = useState(false);
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    await registerUser(name, email, password, navigate);
+  };
   return (
     <section className="auth-page mt-12  mb-12 max-w-screen-xl grid place-items-center mx-auto ">
       <div className="auth-form grid  gap-y-8  shadow-2xl px-12 py-8">
@@ -12,10 +23,10 @@ const Register = () => {
             Sign Up
           </h1>
           <p className="text-gray-600 font-medium ">
-          Create an account to unlock exlusive features.
+            Create an account to unlock exlusive features.
           </p>
         </div>
-        <form>
+        <form onSubmit={submitHandler}>
           <div>
             <label
               className="mb-2 block font-medium text-gray-600"
@@ -23,7 +34,10 @@ const Register = () => {
             >
               Full Name
             </label>
-            <input required
+            <input
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full px-4 py-4 bg-slate-100 rounded-md"
               placeholder="Enter your Name"
               type="text"
@@ -38,7 +52,10 @@ const Register = () => {
             >
               Email
             </label>
-            <input required
+            <input
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-4 bg-slate-100 rounded-md"
               placeholder="Enter your Email"
               type="email"
@@ -53,7 +70,10 @@ const Register = () => {
             >
               Password
             </label>
-            <input required
+            <input
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full mb-1 px-4 py-4 bg-slate-100 rounded-md"
               placeholder="Enter your Password"
               type={pass ? "text" : "password"}
@@ -69,7 +89,8 @@ const Register = () => {
           </div>
           <div className="text-gray-700 flex flex-col gap-2">
             <div className="text-gray-700 ">
-              <input required
+              <input
+                required
                 className="accent-slate-200 mr-2 scale-125 cursor-pointer"
                 type="checkbox"
                 name="rem-id"
@@ -97,8 +118,12 @@ const Register = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <button className="bg-orange-400 py-3 text-white rounded-md font-medium">
-              Login
+            <button
+              type="submit"
+              disabled={btnLoading}
+              className="bg-orange-400 py-3 text-white rounded-md font-medium"
+            >
+              {btnLoading ? "Please Wait" : "Sign Up"}
             </button>
             <button className="bg-slate-200 py-2 rounded-md font-medium">
               <img

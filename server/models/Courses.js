@@ -9,8 +9,13 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
   image: {
     type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
     required: true,
   },
   duration: {
@@ -30,4 +35,5 @@ const schema = new mongoose.Schema({
     default: Date.now,
   },
 });
+
 export const Courses = mongoose.model("Courses", schema);

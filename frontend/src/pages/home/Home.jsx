@@ -2,10 +2,11 @@ import React from 'react'
 
 import { Link, NavLink,useNavigate } from "react-router-dom";
 import Feature from '../feature/Feature';
+import Faq from '../../components/Faq/Faq.jsx';
 // import Bencard from "../common/Bencard/Bencard";
 // import Carddata from "../Carddata";
 // import Tes from "../Tes/Tes";
-// import Faq from "../Faq/Faq";
+
 
 const Home = () => {
   const navigate=useNavigate()
@@ -42,7 +43,7 @@ const Home = () => {
           {/* <Tes /> */}
         </section>
         <section id="Faq">
-          {/* <Faq /> */}
+           <Faq/>
         </section>
       </main>
     </>
