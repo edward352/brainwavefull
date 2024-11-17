@@ -1,6 +1,5 @@
 import React from "react";
-
-import { CourseData } from "../../context/CouseContext";
+import { CourseData } from "../../context/CourseContext";
  import CourseCard from "../../components/coursecard/CourseCard";
 
 const Courses = () => {
@@ -17,7 +16,7 @@ const Courses = () => {
         ) : (
           <p>No Courses Yet!</p>
         )}
-      </div>
+      </div> 
     </div>
   );
 };

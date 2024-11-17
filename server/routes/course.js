@@ -4,7 +4,7 @@ import {
   getSingleCourse,
   fetchLectures,
   fetchLecture,
-} from "../controllers/courses.js";
+} from "../controllers/course.js";
 
 import { isAuth } from "../middlewares/isAuth.js";
 const router = express.Router();

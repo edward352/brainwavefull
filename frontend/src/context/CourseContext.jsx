@@ -11,34 +11,33 @@ export const CourseContextProvider = ({ children }) => {
 
   async function fetchCourses() {
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/course/all`);
-
-      setCourses(data.courses);
+      const { data } = await axios.get(`${server}/api/course/all`)
+      setCourses(data.course);
     } catch (error) {
       console.log(error);
     }
   }
 
-   async function fetchCourse(id) {
-     try {      const { data } = await axios.get(`${server}/api/course/${id}`);
-       setCourse(data.course);
-     } catch (error) {
-       console.log(error);
-     }
-  }
-   async function fetchMyCourse() {
-     try {
-       const { data } = await axios.get(`${server}/api/mycourse`, {
-         headers: {
-           token: localStorage.getItem("token"),
-         },
-       });
+  //  async function fetchCourse(id) {
+  //    try {      const { data } = await axios.get(`${server}/api/course/${id}`);
+  //      setCourse(data.course);
+  //    } catch (error) {
+  //      console.log(error);
+  //    }
+  // }
+  //  async function fetchMyCourse() {
+  //    try {
+  //      const { data } = await axios.get(`${server}/api/mycourse`, {
+  //        headers: {
+  //          token: localStorage.getItem("token"),
+  //        },
+  //      });
 
-       setMyCourse(data.courses);
-     } catch (error) {
-       console.log(error);
-     }
-   }
+  //      setMyCourse(data.courses);
+  //    } catch (error) {
+  //      console.log(error);
+  //    }
+  //  }
 
   useEffect(() => {
     fetchCourses();

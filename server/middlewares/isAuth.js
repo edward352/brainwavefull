@@ -13,6 +13,7 @@ export const isAuth = async (req, res, next) => {
     const decodedData = jwt.verify(token, process.env.Jwt_Sec);
 
     req.user = await User.findById(decodedData._id);
+
     next();
   } catch (error) {
     res.status(500).json({
@@ -27,7 +28,8 @@ export const isAdmin = (req, res, next) => {
       return res.status(403).json({
         message: "You are not admin",
       });
-      next()
+
+    next();
   } catch (error) {
     res.status(500).json({
       message: error.message,
