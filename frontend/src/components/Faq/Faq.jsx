@@ -18,9 +18,9 @@ const Faq = () => {
           <b> support@brainwave.com</b>
         </p>
         <div className="mt-6">
-          <button className="bg-slate-300 px-4 py-2 rounded-md">
+          {/* <button className="bg-slate-300 px-4 py-2 rounded-md">
             See All FAQ's
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="border flex flex-col gap-4 border-slate-300 py-4 px-4 w-full">
