@@ -7,7 +7,7 @@ const Courses = () => {
 
   console.log(courses);
   return (
-    <div className="courses text-center max-w-screen-xl mx-auto">
+    <div className="courses mt-8 mb-12 max-w-screen-xl mx-auto text-center grid gap-4 place-items-center">
       <h2>Available Courses</h2>
 
       <div className="course-container">

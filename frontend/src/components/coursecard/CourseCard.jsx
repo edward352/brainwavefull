@@ -30,13 +30,13 @@ const CourseCard = ({ course }) => {
     }
   };
   return (
-    <section className="mt-8 mb-12 max-w-screen-xl mx-auto">
-       <div className="course-card grid place-items-center">
+    <section className="">
+       <div className="course-card grid place-items-center shadow-xl">
         <div className="w-1/3">
         <img src={`${server}/${course.image}`} alt="" className="course-image" />
         </div>
-        <div>
-        <h3>{course.title}</h3>
+        <div className="grid  gap-4 px-10  py-4  items-stretch ">
+        <h3 className="lg:text-4xl text-3xl mb-6 text-center font-mono font-semibold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">{course.title}</h3>
       <p>Instructor- {course.createdBy}</p>
       <p>Duration- {course.duration} weeks</p>
       <p>Price- ₹{course.price}</p>

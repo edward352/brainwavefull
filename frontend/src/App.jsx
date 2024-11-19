@@ -6,11 +6,12 @@ import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Verify from "./pages/auth/Verify.jsx";
 import Footer from "./components/footer/footer.jsx";
-import About from "./pages/about.jsx/About.jsx";
+import About from "./pages/about/About.jsx";
 import Account from "./pages/account/Account.jsx";
 import { UserData } from "./context/UserContext.jsx";
 import Loading from "./components/loading/Loading.jsx";
 import Courses from "./pages/courses/Courses.jsx";
+import CourseDescription from "./pages/coursedescription/coursedescription.jsx";
 
 const App = () => {
   const { isAuth, user, loading } = UserData();
@@ -35,6 +36,7 @@ const App = () => {
               element={isAuth ? <Home /> : <Register />}
             />
             <Route path="/verify" element={isAuth ? <Home /> : <Verify />} />
+            <Route path="/course/:id" element={isAuth ? <CourseDescription /> : <Login />} />
           </Routes>
           <Footer />
         </BrowserRouter>

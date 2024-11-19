@@ -3,6 +3,7 @@ import React from 'react'
 import { Link, NavLink,useNavigate } from "react-router-dom";
 import Feature from '../feature/Feature';
 import Faq from '../../components/Faq/Faq.jsx';
+import Courses from '../courses/Courses.jsx';
 // import Bencard from "../common/Bencard/Bencard";
 // import Carddata from "../Carddata";
 // import Tes from "../Tes/Tes";
@@ -40,7 +41,7 @@ const Home = () => {
           <Feature />
         </section>
         <section id="Tes">
-          {/* <Tes /> */}
+          <Courses />
         </section>
         <section id="Faq">
            <Faq/>
