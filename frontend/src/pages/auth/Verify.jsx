@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import "./auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import { TbArrowUpRight } from "react-icons/tb";
- import { UserData } from "../../context/UserContext";
+import { UserData } from "../../context/UserContext";
 // import ReCAPTCHA from "react-google-recaptcha";
 
 const Verify = () => {
@@ -35,8 +35,8 @@ const Verify = () => {
             className="w-full px-4 py-4 bg-slate-200 rounded-md"
             type="number"
             onWheel={(e) => e.target.blur()}
-             value={otp}
-             onChange={(e) => setOtp(e.target.value)}
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
             required
           />
           {/* <ReCAPTCHA
@@ -45,8 +45,11 @@ const Verify = () => {
           /> */}
           {/* . */}
           {/* {show && ( */}
-          <button disabled={btnLoading} className="common-btn w-full  bg-orange-400 py-3 text-white rounded-md font-medium">
-           {btnLoading ? "Please Wait..." : "Verify"} Verify
+          <button
+            disabled={btnLoading}
+            className="common-btn w-full  bg-orange-400 py-3 text-white rounded-md font-medium"
+          >
+            {btnLoading ? "Please Wait..." : "Verify"}
           </button>
         </form>
         <p className="text-center">
