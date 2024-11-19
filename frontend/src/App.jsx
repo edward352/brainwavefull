@@ -16,6 +16,8 @@ import PaymentSuccess from "./pages/paymentsucess/PaymentSuccess.jsx";
 import Dashbord from "./pages/dashboard/Dashboard.jsx";
 import CourseStudy from "./pages/coursestudy/CourseStudy.jsx";
 import Lecture from "./pages/lecture/Lecture.jsx";
+import AdminDashbord from "./admin/Dashboard/AdminDashboard.jsx";
+import AdminCourses from "./admin/Courses/AdminCourses.jsx";
 
 const App = () => {
   const { isAuth, user, loading } = UserData();
@@ -59,6 +61,14 @@ const App = () => {
              <Route
               path="/lectures/:id"
               element={isAuth ? <Lecture user={user} /> : <Login />}
+            />
+            <Route
+              path="/admin/dashboard"
+              element={isAuth ? <AdminDashbord user={user} /> : <Login />}
+            />
+             <Route
+              path="/admin/course"
+              element={isAuth ? <AdminCourses user={user} /> : <Login />}
             />
           </Routes>
           <Footer />

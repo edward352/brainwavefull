@@ -8,7 +8,7 @@ export default function Header({isAuth}) {
   let [openMenu,setopenMenu]=useState(false)
   return (
     <header className="shadow-md z-50 sticky top-0 ">
-      <nav className="lg:flex bg-white py-2.5 items-center justify-between max-w-screen-xl mx-auto lg:px-6 px-4 ">
+      <nav className="lg:flex  bg-white py-2.5 items-center justify-between max-w-screen-xl mx-auto lg:px-6 px-4 ">
         <div>
           <Link to={'/'} className="flex items-center">
             <img
@@ -16,7 +16,7 @@ export default function Header({isAuth}) {
               className="mr-2 w-12"
               alt=""
             />
-            <span className="font-mono text-xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">BrainWave</span>
+            <span className="font-mono text-2xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">BrainWave</span>
           </Link>
         </div>
         <div className="absolute right-8 top-5 cursor-pointer lg:hidden " onClick={()=>setopenMenu(!openMenu)}>
