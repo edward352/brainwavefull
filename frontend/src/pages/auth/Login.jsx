@@ -3,16 +3,17 @@ import { Link,useNavigate } from 'react-router-dom';
 import { IoMdEye,IoMdEyeOff} from "react-icons/io";
 import { TbArrowUpRight } from "react-icons/tb";
 import { UserData } from "../../context/UserContext.jsx";
+import { CourseData } from '../../context/CourseContext.jsx';
 const Login = () => {
     const navigate = useNavigate();
     const { btnLoading, loginUser } = UserData();
     const [pass,setPass]=useState(false)
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
-
+    const {fetchMyCourse}= CourseData();
     const submitHandler = async (e) => {
         e.preventDefault();
-        await loginUser(email, password, navigate);
+        await loginUser(email, password, navigate,fetchMyCourse);
       };
   return (
     <section className='auth-page mt-12  mb-12 max-w-screen-xl grid place-items-center mx-auto '>

@@ -6,6 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { UserData } from "../../context/UserContext";
 import Loading from "../../components/loading/Loading";
+import PaymentSuccess from "../paymentsucess/PaymentSuccess";
 
 const CourseDescription = ({ user }) => {
   const params = useParams();
@@ -50,7 +51,8 @@ const CourseDescription = ({ user }) => {
           response;
 
         try {
-          const { data } = await axios.post(`${server}/api/verification/${params.id}`,
+          const { data } = await axios.post(
+            `${server}/api/verification/${params.id}`,
             {
               razorpay_order_id,
               razorpay_payment_id,
@@ -69,8 +71,7 @@ const CourseDescription = ({ user }) => {
           toast.success(data.message);
           setLoading(false);
           navigate(`/payment-success/${razorpay_payment_id}`);
-        } 
-        catch (error) {
+        } catch (error) {
           toast.error(error.response.data.message);
           setLoading(false);
         }

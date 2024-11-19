@@ -3,7 +3,8 @@ import { Courses } from "../models/Courses.js";
 import { Lecture } from "../models/Lecture.js";
 import { User } from "../models/User.js";
 import { instance } from "../index.js";
-
+import { Payment } from "../models/Payment.js";
+import crypto from "crypto";
 export const getAllCourses = TryCatch(async (req, res) => {
   const course = await Courses.find();
   res.json({
@@ -41,7 +42,7 @@ export const fetchLecture = TryCatch(async (req, res) => {
   if (user.role === "admin") {
     return res.json({ lecture });
   }
-  if (!user.subscription.includes(req.params.id))
+  if (!user.subscription.includes(lecture.course))
     return res.status(400).json({
       message: "You have not subscribed to this course",
     });
@@ -104,11 +105,11 @@ export const paymentVerification = TryCatch(async (req, res) => {
 
     user.subscription.push(course._id);
 
-    await Progress.create({
-      course: course._id,
-      completedLectures: [],
-      user: req.user._id,
-    });
+    // await Progress.create({
+    //   course: course._id,
+    //   completedLectures: [],
+    //   user: req.user._id,
+    // });
 
     await user.save();
 

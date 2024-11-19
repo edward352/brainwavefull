@@ -34,7 +34,7 @@ const Account = ({ user }) => {
 
             <button
               onClick={() => navigate(`/${user._id}/dashboard`)}
-              className="common-btn 'bg-orange-400 py-3 text-white rounded-md font-medium"
+              className="common-btn bg-orange-400 py-3 text-white rounded-md font-medium"
             >
               <MdDashboard />
               Dashboard
