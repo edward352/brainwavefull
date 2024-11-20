@@ -31,66 +31,78 @@ const CourseCard = ({ course }) => {
   };
   return (
     <section className="">
-       <div className="course-card grid place-items-center shadow-xl">
-        <div className="w-1/3">
-        <img src={`${server}/${course.image}`} alt="" className="course-image" />
+      <div className="course-card grid  gap-4 px-10 shadow-xl py-4  items-stretch ">
+        <div className="grid place-items-center">
+          <img
+            src={`${server}/${course.image}`}
+            alt=""
+            className="course-image rounded-md float-left w-[600px] h-[400px] object-cover"
+          />
         </div>
-        <div className="grid  gap-4 px-10  py-4  items-stretch ">
-        <h3 className="lg:text-4xl text-3xl mb-6 text-center font-mono font-semibold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">{course.title}</h3>
-      <p>Instructor- {course.createdBy}</p>
-      <p>Duration- {course.duration} weeks</p>
-      <p>Price- ₹{course.price}</p>
-      {isAuth ? (
-        <>
-          {user && user.role !== "admin" ? (
+        <div className="grid  gap-4   items-stretch ">
+          <h3 className="lg:text-4xl text-3xl mb-6 text-center font-mono font-semibold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
+            {course.title}
+          </h3>
+          <div className="flex flex-col md:flex-row gap-2 justify-between items-center">
+            <p className="p-2 shadow rounded-md bg-slate-200 text-sm">
+              Instructor: {course.createdBy}
+            </p>
+            <p className="p-2 shadow rounded-md bg-slate-200 text-sm">
+              Duration: {course.duration} weeks
+            </p>
+          </div>
+          <p className="p-2 shadow rounded-md bg-slate-300 font-mono font-semibold text-lg">
+            Price: ₹{course.price}
+          </p>
+          {isAuth ? (
             <>
-              {user.subscription.includes(course._id) ? (
-                <button
-                  onClick={() => navigate(`/course/study/${course._id}`)}
-                  className="common-btn"
-                >
-                  Study
-                </button>
+              {user && user.role !== "admin" ? (
+                <>
+                  {user.subscription.includes(course._id) ? (
+                    <button
+                      onClick={() => navigate(`/course/study/${course._id}`)}
+                      className="common-btn "
+                    >
+                      Study
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => navigate(`/course/${course._id}`)}
+                      className="common-btn"
+                    >
+                      Get Started
+                    </button>
+                  )}
+                </>
               ) : (
                 <button
-                  onClick={() => navigate(`/course/${course._id}`)}
-                  className="common-btn"
+                  onClick={() => navigate(`/course/study/${course._id}`)}
+                  className="common-btn p-2 shadow rounded-md bg-slate-300 font-mono font-semibold text-lg"
                 >
-                  Get Started
+                  Study
                 </button>
               )}
             </>
           ) : (
             <button
-              onClick={() => navigate(`/course/study/${course._id}`)}
-              className="common-btn"
+              onClick={() => navigate("/login")}
+              className="common-btn p-2 shadow rounded-md bg-slate-300  font-mono font-semibold text-lg"
             >
-              Study
+              Get Started
             </button>
           )}
-        </>
-      ) : (
-        <button onClick={() => navigate("/login")} className="common-btn">
-          Get Started
-        </button>
-      )}
 
-      <br />
-
-      {user && user.role === "admin" && (
-        <button
-          onClick={() => deleteHandler(course._id)}
-          className="common-btn"
-          style={{ background: "red" }}
-        >
-          Delete
-        </button>
-      )}
+          {user && user.role === "admin" && (
+            <button
+              onClick={() => deleteHandler(course._id)}
+              className="common-btn p-2 shadow rounded-md bg-slate-300 text-sm"
+            >
+              Delete
+            </button>
+          )}
         </div>
-      
-    </div>
+      </div>
     </section>
-   
   );
 };
 

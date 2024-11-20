@@ -8,9 +8,9 @@ const Courses = () => {
   console.log(courses);
   return (
     <div className="courses text-center max-w-screen-xl mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Available Courses</h2>
+      <h2 className="lg:text-4xl text-3xl mb-6 text-center font-mono font-semibold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text ">Available Courses</h2>
 
-      <div className="course-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="course-container grid lg:grid-cols-2 gap-4">
         {courses && courses.length > 0 ? (
           courses.map((e) => <CourseCard key={e._id} course={e} />)
         ) : (

@@ -16,20 +16,23 @@ const CourseStudy = ({ user }) => {
     fetchCourse(params.id);
   }, []);
   return (
-    <>
+    <section className="mt-12 md:text-center mb-12 max-w-screen-xl p-8  mx-auto shadow-xl">
       {course && (
-        <div className="course-study-page">
-          <img src={`${server}/${course.image}`} alt="" width={350} />
-          <h2>{course.title}</h2>
-          <h4>{course.description}</h4>
-          <h5>by - {course.createdBy}</h5>
-          <h5>Duration - {course.duration} weeks</h5>
+        <div className="course-study-page flex flex-col md:flex-row justify-around">
+          <div><img src={`${server}/${course.image}`} alt="" width={350} className="rounded-xl" /></div>
+          <div className="flex flex-col justify-between">
+          <h2 className="text-3xl font-semibold">{course.title}</h2>
+          <h4 className="text-2xl ">{course.description}</h4>
+          <h5 className="text-2xl">By - {course.createdBy}</h5>
+          <h5 className="text-2xl">Duration - {course.duration} weeks</h5>
           <Link to={`/lectures/${course._id}`}>
-            <h2>Lectures</h2>
+            <h2 className="p-2 text-2xl font-semibold shadow rounded-md bg-slate-300 ">Lectures</h2>
           </Link>
+          </div>
+          
         </div>
       )}
-    </>
+    </section>
   );
 };
 
