@@ -7,7 +7,7 @@ import { Navigate } from "react-router-dom";
 export default function Header({isAuth}) {
   let [openMenu,setopenMenu]=useState(false)
   return (
-    <header className="shadow-md z-50 sticky top-0 ">
+    <header className="shadow-md bg-white z-50 sticky top-0 ">
       <nav className="lg:flex  bg-white py-2.5 items-center justify-between max-w-screen-xl mx-auto lg:px-6 px-4 ">
         <div>
           <Link to={'/'} className="flex items-center">

@@ -85,7 +85,7 @@ const AdminCourses = ({ user }) => {
     <Layout>
       <div className="admin-courses flex lg:flex-row flex-col">
         <div className="left">
-          <h1>All Courses</h1>
+          <h1 className="text-center">All Courses</h1>
           <div className="dashboard-content">
             {courses && courses.length > 0 ? (
               courses.map((e) => {

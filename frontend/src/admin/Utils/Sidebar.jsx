@@ -7,7 +7,7 @@ import { UserData } from "../../context/UserContext";
 const Sidebar = () => {
   const { user } = UserData();
   return (
-    <div className="sidebar bg-gray-200 text-black w-64 min-h-screen p-4">
+    <div className="sidebar z-4 bg-gray-100 text-black w-64 min-h-screen p-4">
     <ul>
       <li className="mb-4">
         <Link to={"/admin/dashboard"} className="flex items-center p-2 hover:bg-gray-700 rounded">

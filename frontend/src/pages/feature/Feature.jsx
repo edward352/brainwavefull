@@ -2,21 +2,21 @@ import React from "react";
 import Featuredata from "./Featuredata.js";
 const Feature = () => {
   return (
-    <section className="mt-8 grid place-items-center">
+    <section className="mt-8 grid place-items-center ">
       <h1 className="lg:text-4xl text-3xl mb-6 text-center font-mono font-semibold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text ">
         Features
       </h1>
-      <div className="grid lg:grid-cols-3 gap-2">
+      <div className="grid lg:grid-cols-3 gap-4 ">
         {Featuredata.map((item)=>
         (
-            <div key={item.id} className=" p-6 bg-white border border-gray-200 rounded-lg shadow">
+            <div key={item.id} className="p-6 bg-white border border-gray-200 rounded-lg shadow-xl grid  gap-8">
             <div className="">
               <p className="text-5xl font-mono font-bold text-end">{item.id}</p>
               <div>
                 <h1 className="text-xl font-semibold font-mono">{item.title}</h1>
                 <p>{item.description}</p>
               </div>
-              <div className="flex justify-end">
+              <div className="grid justify-end">
                 <svg
                   className="w-12 "
                   viewBox="0 0 24 24"

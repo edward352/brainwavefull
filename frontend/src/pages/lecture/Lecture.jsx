@@ -172,8 +172,8 @@ const Lecture = ({ user }) => {
         <Loading />
       ) : (
         <>
-          <div className="lecture-page">
-            <div className="left">
+          <div className="lecture-page flex flex-col justify-evenly  mb-12 max-w-screen-xl p-8  mx-auto">
+            <div className="left ">
               {lecLoading ? (
                 <Loading />
               ) : (
@@ -182,50 +182,53 @@ const Lecture = ({ user }) => {
                     <>
                       <video
                         src={`${server}/${lecture.video}`}
-                        width={"70%"}
+                        className="mb-4"
                         controls
                         controlsList="nodownload noremoteplayback"
                         disablePictureInPicture
                         disableRemotePlayback
                         autoPlay
                       ></video>
-                      <h1>{lecture.title}</h1>
+                      <div className="flex gap-4 flex-col">
+                      <h1 className="">{lecture.title}</h1>
                       <h3>{lecture.description}</h3>
+                      </div>
+                     
                     </>
                   ) : (
-                    <h1>Please Select a Lecture</h1>
+                    <h1 className="text-2xl text-center">Please Select a Lecture</h1>
                   )}
                 </>
               )}
             </div>
             <div className="right">
               {user && user.role === "admin" && (
-                <button className="common-btn" onClick={() => setShow(!show)}>
+                <button className="common-btn text-xl bg-orange-200 px-4 py-2" onClick={() => setShow(!show)}>
                   {show ? "Close" : "Add Lecture"}
                 </button>
               )}
 
               {show && (
-                <div className="lecture-form">
+                <div className="lecture-form flex flex-col">
                   <h2>Add Lecture</h2>
-                  <form onSubmit={submitHandler}>
-                    <label htmlFor="text">Title</label>
-                    <input
+                  <form onSubmit={submitHandler} className="flex flex-col">
+                    <label className="mb-2 block font-medium text-gray-600" htmlFor="text">Title</label>
+                    <input className="w-full px-4 py-4 bg-slate-200 rounded-md"
                       type="text"
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
                       required
                     />
 
-                    <label htmlFor="text">Description</label>
-                    <input
+                    <label  className="mb-2 block font-medium text-gray-600" htmlFor="text">Description</label>
+                    <input className="w-full px-4 py-4 bg-slate-200 rounded-md"
                       type="text"
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
                       required
                     />
 
-                    <input
+                    <input className="w-full px-4 py-4 mt-4  bg-slate-200 rounded-md"
                       type="file"
                       placeholder="choose video"
                       onChange={changeVideoHandler}
@@ -240,25 +243,27 @@ const Lecture = ({ user }) => {
                         controls
                       ></video>
                     )}
-
+                    <div className="flex justify-center">
                     <button
                       disabled={btnLoading}
                       type="submit"
-                      className="common-btn"
+                      className="common-btn mt-6 bg-slate-300 px-4 py-2 rounded "
                     >
                       {btnLoading ? "Please Wait..." : "Add"}
                     </button>
+                    </div>
+                    
                   </form>
                 </div>
               )}
 
               {lectures && lectures.length > 0 ? (
                 lectures.map((e, i) => (
-                  <>
+                  < >
                     <div
                       onClick={() => fetchLecture(e._id)}
                       key={i}
-                      className={`lecture-number ${
+                      className= {`lecture-number mb-4 mt-4  bg-orange-400 w-1/3 px-4 py-2 text-white rounded-md font-medium text-xl ${
                         lecture._id === e._id && "active"
                       }`}
                     >
@@ -266,8 +271,8 @@ const Lecture = ({ user }) => {
                     </div>
                     {user && user.role === "admin" && (
                       <button
-                        className="common-btn"
-                        style={{ background: "red" }}
+                        className="common-btn bg-red-600 px-4 py-2 text-white rounded-md font-medium"
+                       
                         onClick={() => deleteHandler(e._id)}
                       >
                         Delete {e.title}

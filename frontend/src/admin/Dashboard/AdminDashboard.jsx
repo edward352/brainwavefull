@@ -29,7 +29,7 @@ const AdminDashbord = ({ user }) => {
     fetchStats();
   }, []);
   return (
-    <div className="">
+    <div className=" p-6">
       <Layout className="">
         <div className="main-content flex gap-4 flex-col text-black">
           <div className="box">

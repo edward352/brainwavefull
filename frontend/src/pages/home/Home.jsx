@@ -24,10 +24,10 @@ const Home = () => {
             </h1>
           </div>
           <div>
-            <h2 className="lg:text-3xl  text-2xl mt-8 ">
+            <h2 className="lg:text-3xl lg:text-center  text-2xl mt-8 ">
               with Online Design and Development Courses.
             </h2>
-            <h3 className="lg:text-xl text-center mt-4">
+            <h3 className="lg:text-xl lg:text-center mt-4">
               Learn from Industry Experts and Enhance Your Skills.
             </h3>
           </div>

@@ -88,50 +88,14 @@ const Register = () => {
             </button>
           </div>
           <div className="text-gray-700 flex flex-col gap-2">
-            <div className="text-gray-700 ">
-              <input
-                required
-                className="accent-slate-200 mr-2 scale-125 cursor-pointer"
-                type="checkbox"
-                name="rem-id"
-                id="rem-id"
-              />
-              <label htmlFor="ins-id ">Student Account</label>
-            </div>
-            <div>
-              <input
-                className="accent-slate-200 mr-2 scale-125 cursor-pointer"
-                type="checkbox"
-                name="rem-id"
-                id="rem-id"
-              />
-              <label htmlFor="rem-id ">
-                I agree with{" "}
-                <a className="underline" href="">
-                  Terms of Use
-                </a>{" "}
-                and{" "}
-                <a className="underline" href="">
-                  Privacy Policy
-                </a>
-              </label>
-            </div>
           </div>
           <div className="flex flex-col gap-4">
             <button
               type="submit"
               disabled={btnLoading}
-              className="bg-orange-400 py-3 text-white rounded-md font-medium"
+              className="bg-orange-400 py-3 mt-2 text-white rounded-md font-medium"
             >
               {btnLoading ? "Please Wait" : "Sign Up"}
-            </button>
-            <button className="bg-slate-200 py-2 rounded-md font-medium">
-              <img
-                className="inline-block w-8 mr-2 "
-                src="src\assets\img\googlelogin.svg"
-                alt=""
-              />
-              Sign Up with Google
             </button>
             <div className="text-center ">
               <p className="">
