@@ -11,13 +11,16 @@ export default function About() {
                     </div> */}
                     <div className="md:12/12 lg:w-12/12">
                         <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">
-                            React development is carried out by passionate developers
+                        Brainwave: Empowering Education Through Innovation
                         </h2>
-                        <p className="mt-6 text-gray-600">
-                        React development is at the heart of our project, fueled by a team of passionate developers dedicated to crafting dynamic and responsive applications. Our mission is to leverage the power of React’s component-based architecture to deliver efficient, user-friendly solutions. With a focus on clean code and reusability, we aim to create seamless experiences that align with modern web standards. Our enthusiasm for innovation drives us to explore advanced features like React Hooks and tools like Next.js to enhance the functionality and performance of our applications.
+                        <p className="mt-6 text-gray-800">
+                        Welcome to Brainwave, a learning platform crafted by a passionate team of developers. Born out of a vision to empower both students and educators, Brainwave bridges the gap between knowledge seekers and providers. Our platform enables tutors to upload and share comprehensive courses, while students can seamlessly access and learn from them, fostering an ecosystem of growth and collaboration.
                         </p>
-                        <p className="mt-4 text-gray-600">
-                        As a team, we believe in the spirit of collaboration and learning. We actively engage in research, discussions, and coding challenges to stay updated with the latest in React and the broader development landscape. Every line of code we write reflects our commitment to quality and the pursuit of excellence. By combining technical expertise with creative problem-solving, we aim to make a meaningful impact through our projects and contribute to the ever-evolving world of web development.
+                        <p className="mt-4 text-gray-800">
+                        Our mission is to create an intuitive, user-friendly interface that enhances the online learning experience. With features such as personalized dashboards, detailed course lists, and a secure system for admin approval of students and tutors, Brainwave ensures a streamlined and organized environment for education. Whether you're a student looking to master new skills or a tutor eager to share your expertise, Brainwave serves as the perfect digital classroom.
+                        </p>
+                        <p className="mt-4 text-gray-800">
+                        We are committed to innovation, quality, and accessibility, combining our technical expertise and academic insights to create a meaningful project that impacts the learning community. Brainwave isn’t just a platform—it’s a reflection of our dedication to shaping the future of education.
                         </p>
                     </div>
                 </div>
